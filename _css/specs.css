@@ -9,6 +9,7 @@ iframe#frame-spec{
     height: 280px;
     border: none;
     overflow: hidden;
+    margin-bottom: 0px;
 }
 iframe#frame-spec::-webkit-scrollbar{
     display: none;
@@ -18,7 +19,8 @@ button a{
     color: white;
 }
 button{
-    position: absolute;
-    left: 1000px;
-    top: 600px;
+    text-align: center;
+    float: right;
+    margin-bottom: 50px;
+    margin-top: 0px;
 }
