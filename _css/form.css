@@ -1,0 +1,27 @@
+input#dataNascimento{
+    width: auto;
+}
+input#prioridade{
+    width: 500px;
+    height: 50px;
+}
+button#pesquisar{
+    margin-top: -5px;
+}
+.form-control h3{
+    text-indent: 100px;
+}
+div .form-control{
+    margin-top: 10px;
+}
+label#labelurgencia{
+    text-align: center;
+}
+
+input#quantidade{
+    width: 100px;
+}
+input#precoTotal{
+    width: 200px;
+    text-align: right;
+}
