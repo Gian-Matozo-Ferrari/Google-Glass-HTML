@@ -24,7 +24,6 @@ function meu_callback(conteudo) {
         myModal.show();
         //CEP não Encontrado.
         limpa_formulário_cep();
-        alert("CEP não encontrado.");
     }
 }
 
@@ -68,12 +67,20 @@ function pesquisacep(valor) {
             })
             myModal.show();
             limpa_formulário_cep();
-            alert("Formato de CEP inválido.");
 
         }
     } //end if.
     else {
         //cep sem valor, limpa formulário.
         limpa_formulário_cep();
+    }
+}
+
+function calcTotal(){
+    var quant = parseInt(document.getElementById('quantidade').value);
+    if(quant >= 0 && quant != null){
+        var total = quant * 7510.43;
+        var totalReais = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById('precoTotal').value = totalReais;
     }
 }

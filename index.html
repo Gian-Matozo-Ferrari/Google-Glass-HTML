@@ -110,6 +110,44 @@
                             style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
                     </div>
                 </div>
+                <!--MODAL pra CEP não encontrado-->
+    <div class="modal" tabindex="-1" id="myModalnotfound">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CEP não Encontrado.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>O CEP que você digitou não foi encontrado em nosso banco de dados, tente digitar novamente ou
+                        acesse
+                        <a target="_blank" href="https://www.google.com.br/maps/">Google Maps</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--MODAL pra CEP em formato inválido-->
+    <div class="modal" tabindex="-1" id="myModalinvalid">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CEP inválido.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>O CEP inserido está em um formato inválido. Tente digitar novamente, apenas <b>8</b> números
+                        separados por hífen (00000-000) ou (00000000). Se tiver dúvidas acesse <a target="_blank"
+                            href="https://www.google.com.br/maps/">Google Maps</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
                 <div class="flex-md-equal w-100 my-md-3 pl-md-3">
                     <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">

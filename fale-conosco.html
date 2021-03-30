@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Especificações Técnicas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="_css/estilo.css">
     <link rel="stylesheet" href="_css/form.css">
 </head>
@@ -55,118 +56,115 @@
         </div>
 
         <div id="home">
-                <form>
-                    <div class="form-control" id="dadospessoais">
-                        <h3>Dados Pessoais</h3>
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">E-mail:</label>
-                            <input type="email" class="form-control" id="email">
-                            <div id="emailHelp" class="form-text">Nós nunca compartilhamos seu E-mail.</div>
-                        </div>
 
-                        <div class="mb-3">
-                            <label for="inputPassword1" class="form-label">Senha:</label>
-                            <input type="password" class="form-control" id="senha" size="50" maxlength="50">
-                            <div id="passwordHelp" class="form-text">Máximo de 50 Caracteres.</div>
-                        </div>
+            <form method="POST" action="dados.php" oninput="calcTotal();">
+                <div class="form-control" id="dadospessoais">
+                    <h3>Dados Pessoais</h3>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        <div id="emailHelp" class="form-text">Nós nunca compartilhamos seu E-mail.</div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Nome Completo</label>
-                            <input type="email" class="form-control" id="nomeCompleto">
-                        </div>
+                    <div class="mb-3">
+                        <label for="inputPassword1" class="form-label">Senha:</label>
+                        <input type="password" class="form-control" id="senha" size="50" maxlength="50" name="senha">
+                        <div id="passwordHelp" class="form-text">Máximo de 50 Caracteres.</div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="inputDate" class="col-2 col-form-label">Data de Nascimento:</label>
-                            <input class="form-control" type="date" id="dataNascimento">
-                        </div>
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
+                    </div>
 
-                        <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="inputDate" class="col-2 col-form-label">Data de Nascimento:</label>
+                        <input class="form-control" type="date" id="dataNascimento" name="dataNascimento">
+                    </div>
+
+                    <div class="mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="sexo" id="masculino">
-                            <label class="form-check-label" for="sexo">Masculino</label>                      
-                            <input class="form-check-input" type="radio" name="sexo" id="feminino">
+                            <label class="form-check-label" for="sexo">Masculino</label>
+                            <input class="form-check-input" type="radio" name="sexo" id="masculino" value="Masculino">
+                        </div>
+                        <div class="form-check">
                             <label class="form-check-label" for="sexo">Feminino</label>
-                          </div>
-                        </div>
-
-                    </div>
-                    <div class="form-control">
-                        <h3>Endereço</h3>
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Cep:<input placeholder="Insira um CEP" class="form-control" name="cep" type="text"
-                                    id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);"></label>
-                            <label class="form-label">
-                                <button id="pesquisar" type="button" class="btn btn-primary"
-                                    onclick="pesquisacep()">Pesquisar</button></label>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Rua:<input class="form-control" name="rua" type="text" id="rua" size="60" />
-                            </label>
-                            <label class="form-label">
-                                Número:<input class="form-control" name="numero" type="text" id="numero" size="10" />
-                            </label>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Bairro:<input class="form-control" name="bairro" type="text" id="bairro" />
-                            </label>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Cidade:<input class="form-control" name="cidade" type="text" id="cidade" size="40" />
-                            </label>
-                            <label class="form-label">
-                                Estado:<input class="form-control" name="uf" type="text" id="uf" size="2" /></label>
+                            <input class="form-check-input" type="radio" name="sexo" id="feminino" value="Feminino">
                         </div>
                     </div>
 
-                    <div class="form-control">
-                        <h3>Quero um Google Glass</h3><br>
-                        <div class="form-floating">
-                            <label for="floatingTextarea2">Comentário</label>
-                            <textarea class="form-control" placeholder="Deixe seu comentário do que achou do meu Site."
-                                id="comentario" style="height: 100px"></textarea>
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label id="labelurgencia" class="form-label">Urgência do pedido.</label><br>
-                            <input type="range" class="form-range" min="1" max="5" id="prioridade">
-                            <datalist id="prioridade">
-                                <option value="1" label="Posso Esperar">
-                                <option value="2" label="Pouca Urgência">
-                                <option value="3" label="Média Urgência">
-                                <option value="4" label="Muita Urgência">
-                                <option value="5" label="Urgente (imediato)">
-                            </datalist>
-                        </div>
+                </div>
+                <div class="form-control">
+                    <h3>Endereço</h3>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Cep:<input placeholder="Insira um CEP" class="form-control" name="cep" type="text" id="cep"
+                                value="" size="10" maxlength="9" onblur="pesquisacep(this.value);"></label>
+                        <label class="form-label">
+                            <button id="pesquisar" type="button" class="btn btn-primary"
+                                onclick="pesquisacep()">Pesquisar</button></label>
+                    </div>
 
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="confirmaCompra">
-                            <label class="form-check-label" for="confirmaCompra">Gostaria de adquirir um Google Glassquando disponível</label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleColorInput" class="form-label">Cor:</label>
-                            <input type="color" class="form-control form-control-color" id="corEscolhida"
-                                value="#563d7c" title="Escolha a Cor">
-                        </div>
-                        <div class="mb-3">
-                            <label for="quantidade" class="form-label">Quantidade:</label>
-                            <input class="form-control" type="number" name="quantidade" id="quantidade">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Rua:<input class="form-control" name="rua" type="text" id="rua" size="60" />
+                        </label>
+                        <label class="form-label">
+                            Número:<input class="form-control" name="numero" type="text" id="numero" size="10" />
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Bairro:<input class="form-control" name="bairro" type="text" id="bairro" />
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Cidade:<input class="form-control" name="cidade" type="text" id="cidade" size="40" />
+                        </label>
+                        <label class="form-label">
+                            Estado:<input class="form-control" name="uf" type="text" id="uf" size="2" /></label>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <h3>Quero um Google Glass</h3><br>
+                    <label for="floatingTextarea2">Comentário</label>
+                    <div class="form-floating">
+                        <textarea placeholder="Deixe aqui seus comentários" class="form-control" id="comentario" style="height: 100px" name="comentario"></textarea>
+                    </div>
+                    <br>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="confirmaCompra" name="confirmaCompra">
+                        <label class="form-check-label" for="confirmaCompra">Gostaria de adquirir um Google Glass quando disponível</label>
                     </div>
                     <div class="mb-3">
+                        <label id="labelurgencia" class="form-label">Urgência do pedido.</label><br>
+                        Min.<input type="range" class="form-range" min="1" max="5" id="prioridade" name="prioridade">Máx.
+                        <datalist for="prioridade">
+                            <option value="1" label="Posso Esperar">
+                            <option value="2" label="Pouca Urgência">
+                            <option value="3" label="Média Urgência">
+                            <option value="4" label="Muita Urgência">
+                            <option value="5" label="Urgente (imediato)">
+                        </datalist>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleColorInput" class="form-label">Cor:</label>
+                        <input type="color" class="form-control form-control-color" id="corEscolhida" value="#563d7c" title="Escolha a Cor" name="corEscolhida">
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label">Quantidade:</label>
+                        <input class="form-control" type="number" name="quantidade" id="quantidade" value="0" min="0"><br>
                         <label for="disabledTextInput" class="form-label">Preço Total: </label>
-                        <input type="text" id="precoTotal" class="form-control" placeholder="R$ 0,00" disabled>
-                      </div>
-                </form>
-                    Preço Total: R$
-
+                        <input type="text" id="precoTotal" name="precoTotal" class="form-control" placeholder="R$ 0,00" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
 
             <footer id="rodape">
                 <p>Copyright &copy; 2021 - by Gian Matozo Ferrari</p>
@@ -188,7 +186,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="_javascript/funcoes.js"></script>
     <script src="_javascript/funcoes.js"></script>
 </body>
 
